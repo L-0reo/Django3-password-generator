@@ -1,10 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+
+<meta charset="utf-8">
+
+
+<head>
+<title>Password Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Peta&family=Montserrat:ital@1&family=Playfair+Display&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link href="{% static 'generator/iconc.png' %}" rel="icon">
+</head>
 
-<div class="container text-center">
-  <h2>password generator</h2>
 
+<body style="background-color: #fcffa4; background-size: cover;">
+
+
+<div style=" padding-bottom: 2.5rem; ">
+  <br>
+  <br>
+  {% load static %}
+
+  <div class="container" style="align-items: center; justify: center; max-width: 40rem; background: rgba(255, 255, 255, 0.2); padding: 2rem; color: black;">
+  <h1 style="font-family: 'Lexend Peta', sans-serif; font-weight: normal;; text-align: center; margin-bottom: 20px;">Password Generator</h1>
+  <!-- <div style="text-align: center; margin-bottom: 20px;"><img src="{% static 'generator/Untitled-1.png' %}" width="300" height="60"></div> -->
+  </div>
+  <br>
+  <div style="display: flex; align-items: center; justify-content: center;" >
   <form action="{% url 'password' %}">
-    <select name="length">
+    <select style="margin-bottom: 10px;" name="length">
       <option value="6">6</option>
       <option value="7">7</option>
       <option value="8">8</option>
@@ -14,24 +38,28 @@
       <option value="12" selected='selected'>12</option>
       <option value="13">13</option>
       <option value="14">14</option>
-    </select> Length
+    </select> Password length
     <br>
-    <input type="checkbox" name="uppercase"> Uppercase
+
+    <p style="margin-bottom: 5px;">Include:</p>
+    <input style="margin-bottom: 10px;" type="checkbox" name="uppercase"> Uppercase
     <br>
-    <input type="checkbox" name="numbers"> Numbers
+    <input style=" margin-bottom: 10px;" type="checkbox" name="numbers"> Numbers
     <br>
-    <input type="checkbox" name="special"> Special Characters
-    <input type="submit" value="Generate Password" class='btn btn-primary'>
+    <input style="margin-bottom: 30px;" type="checkbox" name="special"> Special Characters
+    <br>
+    <input style="margin-bottom: 10px;" type="submit" value="Generate Password" class='btn btn-primary'>
+
   </form>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <a href="{% url 'about' %}">about</a>
+  </div>
+</div>
+
+<footer style="position: fixed; left: 50%;bottom: 4px; transform: translate(-50%, -50%); margin: 0 auto;"><a href="{% url 'about' %}">about</a></footer>
+
 
 </div>
+</body>
+
+<script type="text/javascript" src="http://localhost:35729/livereload.js">
+
+</script>
