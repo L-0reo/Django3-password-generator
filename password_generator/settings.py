@@ -22,9 +22,10 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 try:
-    SECRET_KEY = os.environ.get('SECRET_KEY_PASSWD_GEN')
-except:
     SECRET_KEY = os.getenv("SECRET_KEY")
+except:
+    SECRET_KEY = os.environ.get('SECRET_KEY_PASSWD_GEN')
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
